@@ -1,4 +1,5 @@
-source $HOME/Code/antigen.zsh
+source $HOME/Code/antigen.zsh || curl -L git.io/antigen > $HOME/Code/antigen.zsh
+
 
 antigen use oh-my-zsh
 
@@ -15,6 +16,9 @@ antigen bundle command-not-found
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
 
+# Kubectl plugin
+antigen bundle superbrothers/zsh-kubectl-prompt
+
 # Load the theme.
 antigen theme robbyrussell
 #antigen theme denysdovhan/spaceship-prompt
@@ -27,13 +31,9 @@ alias ag='ag -u'
 alias debug='~/Code/debug.sh'
 alias oplogs='k logs -n as-air-cluster-system -l control-plane=controller-manager'
 alias awslogin='source ~/aws-config.sh'
-#bindkey "\e\e[D" backward-word
-#bindkey "\e\e[C" forward-word
-source /Users/mayankjha/Code/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PATH=$PATH:~/go/bin
 
 autoload -U colors; colors
-source /opt/homebrew/etc/zsh-kubectl-prompt/kubectl.zsh
 function right_prompt() {
   local color="red"
 
@@ -58,3 +58,4 @@ export PATH="/opt/homebrew/opt/go@1.24/bin:$PATH"
 
 export DOTNET_ROOT=$HOME/.dotnet
 export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
+source ~/zsh_secrets
