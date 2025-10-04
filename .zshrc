@@ -58,4 +58,4 @@ export PATH="/opt/homebrew/opt/go@1.24/bin:$PATH"
 
 export DOTNET_ROOT=$HOME/.dotnet
 export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
-source ~/zsh_secrets
+#source ~/zsh_secrets
