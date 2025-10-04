@@ -43,16 +43,16 @@ function right_prompt() {
 
   echo "%{$fg[$color]%}($ZSH_KUBECTL_PROMPT)%{$reset_color%}"
 }
-K8S='$(right_prompt)'
-NEWLINE=$'\n'
-PROMPT="$K8S ${NEWLINE} $PROMPT "
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+#K8S='$(right_prompt)'
+#NEWLINE=$'\n'
+#PROMPT="$K8S ${NEWLINE} $PROMPT "
+#export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
-export KUBECONFIG="$HOME/.kube/config"
+#export KUBECONFIG="$HOME/.kube/config"
 # kubeconfig per session
-file="$(mktemp -t "kubectx.XXXXXX")"
-cp "${KUBECONFIG}" "${file}"
-export KUBECONFIG="${file}"
+#file="$(mktemp -t "kubectx.XXXXXX")"
+#cp "${KUBECONFIG}" "${file}"
+#export KUBECONFIG="${file}"
 
 export PATH="/opt/homebrew/opt/go@1.24/bin:$PATH"
 
